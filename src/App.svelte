@@ -70,7 +70,7 @@
     <div class="sticky">
       <figure>
         <img
-          src="../src/images/participationrate.PNG"
+          src="./src/images/participationrate.PNG"
           alt="voter participation since 1999 election"
           height="600px"
           width="700px"
@@ -82,7 +82,7 @@
   <div class="image-overflow">
     <figure>
       <img
-        src="../src/images/votingpatternfunnel.PNG"
+        src="./src/images/votingpatternfunnel.PNG"
         alt="voter participation since 1999 election"
         height="100%"
         width="100%"
