@@ -130,10 +130,6 @@
     box-sizing: border-box;
   }
 
-  body {
-    width: 1280px;
-  }
-
   p {
     margin: 0px;
   }
