@@ -70,7 +70,7 @@
     <div class="sticky">
       <figure>
         <img
-          src="./src/images/participationrate.png"
+          src="voterTurnOut/src/images/participationrate.png"
           alt="voter participation since 1999 election"
           height="600px"
           width="700px"
