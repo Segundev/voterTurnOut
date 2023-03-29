@@ -12,9 +12,7 @@
 
 <main>
   <div class="text first-text">
-    <p>
-      Only 3 out 10 Nigerians who are eligible to voted on the 25th of February
-    </p>
+    <p>Only 3 out of 10 eligible voters voted on the 25th of February</p>
   </div>
 
   <div class="text">
