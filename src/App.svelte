@@ -1,5 +1,6 @@
 <script>
   import Scrolly from "$components/Scrolly.svelte";
+  import ParticipationRateChart from "$components/demo.svelte";
 
   let value;
   const steps = [
@@ -66,21 +67,14 @@
       </Scrolly>
     </div>
     <div class="sticky">
-      <figure>
-        <img
-          src="./src/images/participationrate.PNG"
-          alt="voter participation since 1999 election"
-          height="600px"
-          width="700px"
-        />
-      </figure>
+      <ParticipationRateChart />
     </div>
   </div>
 
   <div class="image-overflow">
     <figure>
       <img
-        src="./src/images/votingpatternfunnel.PNG"
+        src="./src/images/frame6.png"
         alt="voter participation since 1999 election"
         height="100%"
         width="100%"
