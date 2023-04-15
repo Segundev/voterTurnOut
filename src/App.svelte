@@ -1,6 +1,10 @@
 <script>
   import Scrolly from "$components/Scrolly.svelte";
   import ParticipationRateChart from "$components/demo.svelte";
+  import DashedLine from "$components/dashedLine.svelte";
+
+  import data from "$data/data.js";
+  import FunnelChart from "$components/funnelChart.svelte";
 
   let value;
   const steps = [
@@ -55,6 +59,8 @@
     </p>
   </div>
 
+  <DashedLine />
+
   <div class="section-container">
     <div class="steps-container">
       <Scrolly bind:value>
@@ -70,17 +76,55 @@
       <ParticipationRateChart />
     </div>
   </div>
-
-  <div class="image-overflow">
-    <figure>
-      <img
-        src="./src/images/frame6.png"
-        alt="voter participation since 1999 election"
-        height="100%"
-        width="100%"
-      />
-    </figure>
+</main>
+<div class="chart">
+  <div class="funnelsection-wrapper">
+    <div class="wrap">
+      <div>
+        <p>Population</p>
+      </div>
+      <div>
+        <p>Voting Age Population</p>
+      </div>
+      <div>
+        <p>Registered Voters</p>
+      </div>
+      <div>
+        <p class="votes">Total Votes</p>
+      </div>
+    </div>
+    <div class="chart-main flex">
+      <div>
+        <h4>2003 Election</h4>
+        <FunnelChart bars={data[2003]} />
+      </div>
+      <div>
+        <h4>2007 Election</h4>
+        <FunnelChart bars={data[2007]} />
+      </div>
+      <div>
+        <h4>2011 Election</h4>
+        <FunnelChart bars={data[2011]} />
+      </div>
+      <div>
+        <h4>2015 Election</h4>
+        <FunnelChart bars={data[2015]} />
+      </div>
+      <div>
+        <h4>2019 Election</h4>
+        <FunnelChart bars={data[2019]} />
+      </div>
+      <div>
+        <h4>2023 Election</h4>
+        <FunnelChart bars={data[2023]} />
+      </div>
+    </div>
   </div>
+</div>
+
+<DashedLine />
+
+<main>
   <div class="text">
     <p>
       Compared to how each state performed with the outcome of the 2019
@@ -126,26 +170,20 @@
     margin: 0px;
   }
 
-  .image-overflow {
-    width: 708px;
-    height: 472px;
-    text-align: center;
-    margin: 0 auto;
-  }
-
   main {
     margin: 0 auto;
-    max-width: 760px;
+    max-width: 700px;
+    position: relative;
   }
 
   .text {
-    margin: 0 3rem;
+    margin: 0 1rem;
     margin-bottom: 2rem;
     line-height: 1.75;
     font-size: 1.25rem;
-    font-family: Lato;
+    font-family: "Tinos";
     font-weight: 400;
-    color: #4e4e4e;
+    color: #313131;
   }
 
   .first-text {
@@ -157,11 +195,13 @@
     position: sticky;
     top: 10%;
     flex: 1 1 60%;
-    width: 60%;
+    margin: 0 auto;
+    width: 700px;
+    text-align: center;
   }
 
   .section-container {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     text-align: center;
     transition: background 100ms;
     display: flex;
@@ -177,7 +217,7 @@
 
   .step-content {
     font-size: 1.25rem;
-    font-family: Lato;
+    font-family: "Tinos";
     font-weight: 400;
     line-height: 1.75;
     background: rgb(254, 255, 249);
@@ -209,7 +249,52 @@
     flex: 1 1 40%;
     z-index: 10;
   }
+  .chart {
+    position: relative;
+    width: 100%;
+    margin: 3rem 0px;
+    background-color: #fafafa;
+  }
 
+  .chart h4 {
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Lato";
+    font-weight: 900;
+    color: #141414;
+    margin: 0px;
+  }
+  .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .chart-main {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .wrap p {
+    padding-right: 1rem;
+    font-size: 1rem;
+    font-family: "Lato";
+    font-weight: 900;
+    color: #141414;
+  }
+
+  .wrap .votes {
+    color: green;
+  }
   /* Comment out the following line to always make it 'text-on-top' */
   @media screen and (max-width: 768px) {
     .section-container {

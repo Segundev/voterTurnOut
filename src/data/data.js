@@ -1,7 +1,58 @@
-export default [
-    {
-        name: 'Example',
-        description: 'This is an example of a data file',
-        reminder: 'You can delete this, as it is just an example.'
-    }
-]
+export default {
+  1999: [
+    { population: 108258359 },
+    { votingAge: 52792781 },
+    { registeredVoters: 57938945 },
+    { totalVotes: 30280052 },
+    { winPercentage: 61.94 },
+    { name: "Olusegun Obasanjo" },
+  ],
+  2003: [
+    { population: 129934911 },
+    { votingAge: 64319246 },
+    { registeredVoters: 60823022 },
+    { totalVotes: 42018735 },
+    { winPercentage: 61.94 },
+    { name: "Olusegun Obasanjo" },
+  ],
+  2007: [
+    { population: 131859731 },
+    { votingAge: 71004507 },
+    { registeredVoters: 61567036 },
+    { totalVotes: 35397517 },
+    { winPercentage: 69.6 },
+    { name: "Umaru Musa YarAdua" },
+  ],
+  2011: [
+    { population: 155215573 },
+    { votingAge: 81691751 },
+    { registeredVoters: 73528040 },
+    { totalVotes: 39469484 },
+    { winPercentage: 58.87 },
+    { name: "Goodluck Jonathan" },
+  ],
+  2015: [
+    { population: 181562056 },
+    { votingAge: 91669312 },
+    { registeredVoters: 67422005 },
+    { totalVotes: 29432083 },
+    { winPercentage: 53.96 },
+    { name: "Muhammadu Buhari" },
+  ],
+  2019: [
+    { population: 208679114 },
+    { votingAge: 106490312 },
+    { registeredVoters: 82344107 },
+    { totalVotes: 28614190 },
+    { winPercentage: 55.6 },
+    { name: "Muhammadu Buhari" },
+  ],
+  2023: [
+    { population: 230842743 },
+    { votingAge: 121187671 },
+    { registeredVoters: 93469008 },
+    { totalVotes: 25436940 },
+    { winPercentage: 36.61 },
+    { name: "Bola Ahmed Tinubu" },
+  ],
+};
