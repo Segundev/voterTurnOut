@@ -8,6 +8,8 @@
   }
 
   .dashed-line {
-    margin: 4rem;
+    margin: auto 4rem;
+    width: 50%;
+    text-align: center;
   }
 </style>

@@ -3,7 +3,8 @@
   import { scaleOrdinal } from "d3-scale";
   import { extent } from "d3-array";
   import { onMount } from "svelte";
-  import { fade, fly } from "svelte/transition";
+  import { draw } from "svelte/transition";
+  import { sineInOut } from "svelte/easing";
 
   import Tooltip from "./tooltip.svelte";
 
@@ -58,12 +59,14 @@
   bind:this={div}
   on:mouseleave={() => (hovered = null)}
 >
-  <figure transition:fade class="chart" on:mouseover={handleMouseover}>
-    {#each turnOut as d}
+  <figure class="chart" on:mouseover={handleMouseover}>
+    {#each turnOut as d, i}
       <div
         class="bar"
         style="width:{xScale(d)}px; background-color:{scaleColor(d)};"
-      />
+      >
+        <p class="index">{i}</p>
+      </div>
     {/each}
   </figure>
   {#if hovered}
@@ -72,6 +75,14 @@
 </div>
 
 <style>
+  .index {
+    text-align: center;
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    font-family: "Tinos";
+    font-weight: 800;
+    color: #313131;
+  }
   .bar {
     height: 25px;
     margin: 0px;

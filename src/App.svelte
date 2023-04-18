@@ -6,6 +6,21 @@
   import data from "$data/data.js";
   import FunnelChart from "$components/funnelChart.svelte";
 
+  !(function () {
+    "use strict";
+    window.addEventListener("message", function (a) {
+      if (void 0 !== a.data["datawrapper-height"]) {
+        var e = document.querySelectorAll("iframe");
+        for (var t in a.data["datawrapper-height"])
+          for (var r = 0; r < e.length; r++)
+            if (e[r].contentWindow === a.source) {
+              var i = a.data["datawrapper-height"][t] + "px";
+              e[r].style.height = i;
+            }
+      }
+    });
+  })();
+
   let value;
   const steps = [
     "<p>In <b>2011</b>, Nigeria recorded <b>53.7% voters participation rate</b> with a total votes of <b>39 million</b> out of <b>73 million</b> registered voters </p>",
@@ -59,8 +74,6 @@
     </p>
   </div>
 
-  <DashedLine />
-
   <div class="section-container">
     <div class="steps-container">
       <Scrolly bind:value>
@@ -81,15 +94,19 @@
   <div class="funnelsection-wrapper">
     <div class="wrap">
       <div>
+        <button>1</button>
         <p>Population</p>
       </div>
       <div>
+        <button>2</button>
         <p>Voting Age Population</p>
       </div>
       <div>
+        <button>3</button>
         <p>Registered Voters</p>
       </div>
       <div>
+        <button>4</button>
         <p class="votes">Total Votes</p>
       </div>
     </div>
@@ -122,8 +139,6 @@
   </div>
 </div>
 
-<DashedLine />
-
 <main>
   <div class="text">
     <p>
@@ -135,6 +150,20 @@
       the North Western states recorded a low voter turnout when compared to
       2019.
     </p>
+  </div>
+
+  <div class="map">
+    <iframe
+      title=""
+      aria-label="Map"
+      id="datawrapper-chart-jtgiW"
+      src="https://datawrapper.dwcdn.net/jtgiW/1/"
+      scrolling="no"
+      frameborder="0"
+      style="width: 0; min-width: 100% !important; border: none;"
+      height="403"
+      data-external="1"
+    />
   </div>
 
   <div class="text">
@@ -164,6 +193,17 @@
 <style>
   * {
     box-sizing: border-box;
+  }
+
+  .map {
+    margin: 3rem auto;
+  }
+  .wrap div {
+    display: flex;
+  }
+  .wrap button {
+    border-radius: 50%;
+    margin-right: 0.75rem;
   }
 
   p {

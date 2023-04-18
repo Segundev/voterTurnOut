@@ -4,6 +4,9 @@
   export let xScale;
   export let m;
 
+  import { fade, fly } from "svelte/transition";
+  import { sineInOut } from "svelte/easing";
+
   $: x = xScale(m.x);
   $: y = xScale(m.y);
 
@@ -18,39 +21,57 @@
 </script>
 
 <div
+  in:fly={{
+    delay: 400,
+    duration: 200,
+    opacity: 1,
+    easing: sineInOut,
+  }}
   class="tooltip"
   style="position: absolute; top: {yPosition}px; left:{xPosition}px ; bottom: {0}px"
   bind:clientWidth={toolTipWidth}
 >
   <div class="tooltip_container">
     <div class="wrap">
-      <h2 class="tip-head t1">Population</h2>
+      <h2 style="background:#C9C1AE; padding:1px 4px" class="tip-head t1">
+        Population
+      </h2>
       <p class="tip-text">
         {data[0].population}
       </p>
     </div>
     <div class="wrap">
-      <h2 class="tip-head t2">Voting Age Pop.</h2>
+      <h2 style="background:#FFC09F; padding:1px 4px" class="tip-head t2">
+        Voting Age Pop.
+      </h2>
       <p class="tip-text">
         {data[1].votingAge}
       </p>
     </div>
     <div class="wrap">
-      <h2 class="tip-head t3">Registered Voters</h2>
+      <h2 style="background:#A0CED9; padding:1px 4px" class="tip-head t3">
+        Registered Voters
+      </h2>
       <p class="tip-text">
         {data[2].registeredVoters}
       </p>
     </div>
     <div class="wrap">
-      <h2 class="tip-head t4">Total Votes</h2>
+      <h2 style="background:#FCF5C7; padding:1px 4px" class="tip-head t4">
+        Total Votes
+      </h2>
       <p class="tip-text">
         {data[3].totalVotes}
       </p>
     </div>
     <div class="wrap">
-      <h2 class="tip-head t5">Winner</h2>
+      <h2 class="tip-head t5" style="background:#AFD9A0; padding:1px 4px">
+        Winner
+      </h2>
       <div>
-        <p class="tip-text">{data[5].name}</p>
+        <p class="tip-text">
+          {data[5].name}
+        </p>
         <p class="tip-text">{data[4].winPercentage}</p>
       </div>
     </div>
