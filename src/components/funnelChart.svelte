@@ -65,7 +65,7 @@
         class="bar"
         style="width:{xScale(d)}px; background-color:{scaleColor(d)};"
       >
-        <p class="index">{i}</p>
+        <p class="index">{i + 1}</p>
       </div>
     {/each}
   </figure>
